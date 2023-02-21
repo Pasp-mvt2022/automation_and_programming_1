@@ -26,7 +26,7 @@ public class MorseCodeTranslator {
             } else if (option == 3) {
                 running = false;
             } else {
-                throw new UnsupportedOperationException("Not a valid option");
+                System.out.println("Not a valid option");
             }
         }
     }
