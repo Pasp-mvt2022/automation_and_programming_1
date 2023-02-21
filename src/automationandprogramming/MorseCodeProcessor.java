@@ -6,6 +6,7 @@ import org.apache.commons.collections4.bidimap.DualHashBidiMap;
 public class MorseCodeProcessor {
 
     private static BidiMap<String, String> morseMap;
+
     public MorseCodeProcessor() {
         morseMap = new DualHashBidiMap<>();
         morseMap.put("A", "*-");
@@ -51,11 +52,11 @@ public class MorseCodeProcessor {
     }
 
     public String encodeCharacter(String text) {
-        return morseMap.get(text);
+        return morseMap.get(text) == null ? "" : morseMap.get(text);
     }
 
     public String decodeCharacter(String morse) {
-        return morseMap.getKey(morse);
+        return morseMap.getKey(morse) == null ? "" : morseMap.getKey(morse);
     }
 
     public String encodeString(String text) {
@@ -64,7 +65,7 @@ public class MorseCodeProcessor {
             encoded.append(encodeCharacter(c.toString()));
             encoded.append(" ");
         }
-        return encoded.toString();
+        return encoded.toString().trim();
     }
 
     public String decodeString(String morse) {

@@ -22,7 +22,7 @@ public class MorseCodeProcessorTest {
     @Test
     public void testEncodeString() {
         MorseCodeProcessor morseCodeProcessor = new MorseCodeProcessor();
-        assertEquals("**** * *-** *-** --- / *-- --- *-* *-** -** ", morseCodeProcessor.encodeString("HELLO WORLD"));
+        assertEquals("**** * *-** *-** --- / *-- --- *-* *-** -**", morseCodeProcessor.encodeString("HELLO WORLD"));
     }
 
     @Test
