@@ -62,10 +62,8 @@ public class MorseCodeProcessor {
     public String encodeString(String text) {
         StringBuilder encoded = new StringBuilder();
         for (Character c : text.toCharArray()) {
-            if (encodeCharacter(c.toString()).equals("")) {
-                encoded.append(encodeCharacter(c.toString()));
-                encoded.append(" ");
-            }
+            encoded.append(encodeCharacter(c.toString()));
+            encoded.append(" ");
         }
         return encoded.toString().trim();
     }
@@ -73,9 +71,7 @@ public class MorseCodeProcessor {
     public String decodeString(String morse) {
         StringBuilder decoded = new StringBuilder();
         for (String s : morse.split(" ")) {
-            if (decodeCharacter(s).equals("")) {
-                decoded.append(decodeCharacter(s));
-            }
+            decoded.append(decodeCharacter(s));
         }
         return decoded.toString();
     }
